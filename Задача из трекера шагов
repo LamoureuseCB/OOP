@@ -1,0 +1,20 @@
+int bestSeries(int goalByStepsPerDay) {
+    int maxDays = 0;
+    int maxSeriesDays = 0;
+
+    for (int day : days) {
+        if (day >= goalByStepsPerDay) {
+            maxDays++;
+        } else {
+            if (maxDays > maxSeriesDays) {
+                maxSeriesDays = maxDays;
+            }
+            maxDays = 0;
+        }
+    }
+    if (maxDays > maxSeriesDays) {
+        maxSeriesDays = maxDays;
+    }
+    return maxSeriesDays;
+}
+
